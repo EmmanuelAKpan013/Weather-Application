@@ -63,7 +63,7 @@ const getWeatherData = function () {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=metric&appid=${API_KEY}`
       );
       const data = await result.json();
-      console.log(data);
+      // console.log(data);
 
       let { humidity, pressure, sunrise, sunset, wind_speed } = data.current;
 
