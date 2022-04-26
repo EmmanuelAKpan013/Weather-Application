@@ -63,7 +63,7 @@ const getWeatherData = function () {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=metric&appid=${API_KEY}`
       );
       const data = await result.json();
-      // console.log(data);
+      console.log(data);
 
       let { humidity, pressure, sunrise, sunset, wind_speed } = data.current;
 
@@ -107,7 +107,7 @@ const getWeatherData = function () {
             class="w-icon"
           />
           <div class="others">
-            <div class="day">Monday</div>
+            <div class="day">${window.moment(day.dt * 1000).format('ddd')}</div>
             <div class="temp">Night - ${day.temp.night} &#176;C</div>
             <div class="temp">Day - ${day.temp.day} &#176;C</div>
           </div>
